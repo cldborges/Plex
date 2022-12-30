@@ -23,8 +23,10 @@ for drive in drives:
         else:
             pastas_a_corrigir.append(pasta)
     for pasta_a_corrigir in pastas_a_corrigir:
+        pasta_base_existe = False
         for pasta_base in pastas_base:
             if pasta_base in pasta_a_corrigir or pasta_base in pasta_a_corrigir.replace('.', ' '):
+                pasta_base_existe = True
                 caminho_completo = os.path.join(drive, pasta_a_corrigir)
                 caminho_completo_novo = os.path.join(drive, pasta_base)
                 for arquivo in os.listdir(caminho_completo):
@@ -37,4 +39,9 @@ for drive in drives:
                 os.rmdir(caminho_completo)
                 #os.chmod(caminho_completo, 0o777)
                 #os.remove(caminho_completo)
+        if pasta_base_existe == False:
+            print(pasta_a_corrigir)
+#            pasta_base = input(f'Não foi encontrada uma pasta para o arquivo {arquivo}, qual seria?')
+ #           os.makedirs(os.path.join(drive, pasta_base))
+
     pastas_a_corrigir.clear()
