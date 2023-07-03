@@ -7,7 +7,7 @@
 import os
 import re
 
-drives = ['D:\OneDrives\OneDrive - abc\Filmes', 'C:\Onedrives\OneDrive - abc\Filmes']
+drives = ['C:\Plex', 'D:\Plex', 'E:\Plex']
 for drive in drives:
     tipos = ['Filmes', 'Infantis']
     for tipo in tipos:
@@ -28,7 +28,7 @@ for drive in drives:
                         os.chmod(caminho_arquivo, 0o777)
                         #print(caminho_arquivo, os.path.getsize(caminho_arquivo))
                         try:
-                            os.remove(caminho_arquivo)
+                            os.remove(caminho_arquivo) 
                         except:
                             pass
                 nome_pasta = pasta
