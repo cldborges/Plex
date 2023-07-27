@@ -3,13 +3,13 @@
 
 # In[137]:
 
-
 import os
 import re
 import easygui
 
-try:
 
+os.system ('taskkill /im uTorrent.exe -t -f')
+try:
     drives = ['C:\Plex', 'D:\Plex', 'E:\Plex']
     for drive in drives:
         tipos = ['Filmes', 'Infantis']
