@@ -35,12 +35,14 @@ try:
                             except:
                                 pass
                     nome_pasta = pasta
-                    palavras_retirar = ['[]', 'WWW', 'BLUDV.COM', 'LAPUMiA.Org', 'dual-audio' ,'WEB-DL', '720p', 'BluRay', '1080p', 'DUAL', 'Dual', '5.1', 'www.ThePirateFilmes.com', 'x264', 'VERSÃO ESTENDIDA', '[ACESSE COMANDOTORRENTS.COM]', 'WWW.LAPUMiAFiLMES.COM', 'WOLVERDONFILMES.COM', 'WEBRip', 'Dual Audio', 'BDRip', '()', 'Audio', 'IMAX', 'MV73']
+                    # Inserir novas palavras no FINAL da lista
+                    palavras_retirar = ['[]', 'WWW', 'BLUDV.COM', 'LAPUMiA.Org', 'dual-audio' ,'WEB-DL', '720p', 'BluRay', '1080p', 'DUAL', 'Dual', '5.1', 'www.ThePirateFilmes.com', 'x264', 'VERSÃO ESTENDIDA', '[ACESSE COMANDOTORRENTS.COM]', 'WWW.LAPUMiAFiLMES.COM', 'WOLVERDONFILMES.COM', 'WEBRip', 'Dual Audio', 'BDRip', '()', 'Audio', 'IMAX', 'MV73', 'Dublado', 'wolverdonfilmes com', 'EAC3', 'AAC', 'NACIONAL', ]
                     for palavra in palavras_retirar:
                         nome_pasta = nome_pasta.replace(palavra, '')
                         nome_pasta = nome_pasta.replace('  ', ' ')
                         nome_pasta = nome_pasta.strip()
                     nome_pasta = nome_pasta.replace('.', ' ')
+                    nome_pasta = nome_pasta.strip()
                     caminho_novo = os.path.join(raiz,nome_pasta)
                     os.rename(caminho_completo, caminho_novo)
                     for arquivo_video in os.listdir(caminho_novo):
